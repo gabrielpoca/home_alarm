@@ -1,0 +1,127 @@
+<div class="container">
+  <h1 class="h1">Alarm Backdoor</h1>
+
+  <div class="interactive-map">
+    <div class="interactive-map__plant">
+      <svg id="plant" xmlns="http://www.w3.org/2000/svg" width="568" height="538" viewBox="0 0 568 538" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+	  Created using Figma
+	</desc>
+	<g id="Canvas">
+	  <use
+	    id="livingroom"
+	    fill="#30302F"
+	    xlink:href="#path0_fill"
+	    transform="translate(103)"
+	  />
+	  <use
+	    id="kitchen"
+	    fill="#30302F"
+	    xlink:href="#path1_fill"
+	    transform="translate(203 187)"
+	  />
+	  <use
+	    id="bedroom"
+	    fill="#30302F"
+	    xlink:href="#path2_fill"
+	    transform="translate(103 325)"
+	  />
+	  <use
+	    id="hall"
+	    fill="#30302F"
+	    xlink:href="#path3_fill"
+	    transform="translate(0 188)"
+	  />
+	  <use
+	    id="bathroom"
+	    fill="#30302F"
+	    xlink:href="#path4_fill"
+	  />
+	  <use
+	    id="balcony"
+	    fill="#30302F"
+	    xlink:href="#path5_fill"
+	    transform="translate(500 8)"
+	  />
+	  <path
+	    d="M0 0h384v171H0V0z"
+	    id="livingroom-line"
+	    class="place"
+	    fill-opacity="0"
+	    stroke="#FD199B"
+	    stroke-opacity="0"
+	    stroke-width="6"
+	    transform="translate(106 3)"
+	  >
+	  </path>
+	  <path
+	    d="M0 0h284v123H0V0z"
+	    class="place"
+	    fill-opacity="0"
+	    fill="#FD199B"
+	    id="kitchen-line"
+	    stroke-opacity="0"
+	    stroke-width="6"
+	    stroke="#FD199B"
+	    transform="translate(206 191)"
+	  >
+	  </path>
+	  <path
+	    id="bedroom-line"
+	    class="place"
+	    fill-opacity="0"
+	    stroke-opacity="0"
+	    stroke-width="6"
+	    stroke="#FD199B"
+	    fill="#FD199B"
+	    transform="translate(106 328)"
+	    d="M380 0H0v92h148v115h236V0z"
+	  >
+	  </path>
+	  <path
+	    d="M0 0h187v123H0V0z"
+	    class="place"
+	    fill-opacity="0"
+	    stroke-opacity="0"
+	    stroke-width="6"
+	    stroke="#FD199B"
+	    id="hall-line"
+	    transform="translate(3 191)"
+	  >
+	  </path>
+	  <path
+	    d="M0 0h88v171H0V0z"
+	    class="place"
+	    fill="#FD199B"
+	    id="bathroom-line"
+	    fill-opacity="0"
+	    stroke-opacity="0"
+	    stroke-width="6"
+	    stroke="#FD199B"
+	    transform="translate(3 3)"
+	  >
+	  </path>
+	</g>
+	<defs>
+	  <path id="path0_fill" d="M0 0h389v177H0V0z"/>
+	  <path id="path1_fill" d="M0 0h290v129H0V0z"/>
+	  <path id="path2_fill" fill-rule="evenodd" d="M390 0H0v98h154v115h236V0z"/>
+	  <path id="path3_fill" d="M0 0h193v129H0V0z"/>
+	  <path id="path4_fill" d="M0 0h94v177H0V0z"/>
+	  <path id="path5_fill" d="M0 0h61c5.5 0 10 4.5 10 10v141c0 5.5-4.5 10-10 10H0V0z"/>
+	</defs>
+      </svg>
+    </div>
+    <div class="interactive-map__actions">
+      <%= form_for @conn, sleep_path(@conn, :create), [as: :sleep], fn f -> %>
+	<%= hidden_input f, :hours, [value: 1] %>
+	<%= submit "Sleep for 1 hour", [class: "button mb-2"] %>
+      <% end %>
+
+      <%= form_for @conn, sleep_path(@conn, :create), [as: :sleep], fn f -> %>
+	<%= hidden_input f, :hours, [value: 4] %>
+	<%= submit "Sleep for 4 hours", [class: "button"] %>
+      <% end %>
+    </div>
+  </div>
+</div>
